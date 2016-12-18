@@ -35,8 +35,8 @@
 	std::stringstream __ss; \
 	__ss << message; \
     std::cerr << __ss.str().c_str() << std::endl; \
-    throw std::runtime_error(__ss.str().c_str()); \
 }
+/*    throw std::runtime_error(__ss.str().c_str()); \ */
 
 namespace Simd
 {

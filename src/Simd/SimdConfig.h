@@ -24,25 +24,25 @@
 #ifndef __SimdConfig_h__
 #define __SimdConfig_h__
 
-//#define SIMD_SSE_DISABLE
+#define SIMD_SSE_DISABLE
 
-//#define SIMD_SSE2_DISABLE
+#define SIMD_SSE2_DISABLE
 
-//#define SIMD_SSE3_DISABLE
+#define SIMD_SSE3_DISABLE
 
-//#define SIMD_SSSE3_DISABLE
+#define SIMD_SSSE3_DISABLE
 
-//#define SIMD_SSE41_DISABLE
+#define SIMD_SSE41_DISABLE
 
-//#define SIMD_SSE42_DISABLE
+#define SIMD_SSE42_DISABLE
 
-//#define SIMD_AVX_DISABLE
+#define SIMD_AVX_DISABLE
 
-//#define SIMD_AVX2_DISABLE
+#define SIMD_AVX2_DISABLE
 
-//#define SIMD_VMX_DISABLE
+#define SIMD_VMX_DISABLE
 
-//#define SIMD_VSX_DISABLE
+#define SIMD_VSX_DISABLE
 
 //#define SIMD_NEON_DISABLE
 
@@ -54,7 +54,7 @@
 
 #define SIMD_NEON_RCP_ITER -1
 
-#define SIMD_NEON_ASM_DISABLE
+//#define SIMD_NEON_ASM_DISABLE
 
 #define SIMD_NEON_PREFECH_SIZE 384
 
