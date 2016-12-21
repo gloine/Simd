@@ -1482,6 +1482,23 @@ extern "C"
 
     /*! @ingroup object_detection
 
+        \fn void * SimdDetectionLoadB(const char * string);
+
+        \short Loads a classifier cascade from memory buffer. 
+        
+        This function supports OpenCV HAAR and LBP cascades type.         
+        Tree based cascades and old cascade formats are not supported.
+
+        \note This function is used for implementation of Simd::Detection.
+
+        \param [in] string - string containing a null terminated xml file.
+        \return a pointer to loaded cascade. On error it returns NULL. 
+                This pointer is used in functions ::SimdDetectionInfo and ::SimdDetectionInit, and must be released with using function ::SimdDetectionFree.
+    */
+    SIMD_API void * SimdDetectionLoadB(const char * string);
+
+    /*! @ingroup object_detection
+
         \fn void * SimdDetectionLoadA(const char * path);
 
         \short Loads a classifier cascade from file. 
