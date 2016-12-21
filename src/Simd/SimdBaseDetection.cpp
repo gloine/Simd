@@ -156,11 +156,11 @@ namespace Simd
             {
                 tinyxml2::XMLDocument xml;
                 if (xml.Parse(string) != tinyxml2::XML_SUCCESS)
-                    SIMD_EX("Can't load XML file '" << path << "'!");
+                    SIMD_EX("Can't load XML string '" << string << "'!");
 
                 tinyxml2::XMLElement * root = xml.RootElement();
                 if (root == NULL)
-                    SIMD_EX("Invalid format of XML file '" << path << "'!");
+                    SIMD_EX("Invalid format of XML string '" << string << "'!");
 
                 tinyxml2::XMLElement * cascade = root->FirstChildElement(Names::cascade);
                 if (cascade == NULL)

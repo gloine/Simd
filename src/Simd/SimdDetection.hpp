@@ -167,6 +167,30 @@ namespace Simd
         }
 
         /*!
+            Loads from in memory classifier cascade. Supports OpenCV HAAR and LBP cascades type.
+            You can call this function more than once if you want to use several object detectors at the same time.
+
+            \note Tree based cascades and old cascade formats are not supported!
+
+            \param [in] string - a string containing cascade
+            \param [in] tag - an user defined tag. This tag will be inserted in output Object structure.
+            \return a result of this operation.
+        */
+        bool LoadFromMemory(const std::string & string, Tag tag = UNDEFINED_OBJECT_TAG)
+        {
+            Handle handle = ::SimdDetectionLoadB(string.c_str());
+            if (handle)
+            {
+                Data data;
+                data.handle = handle;
+                data.tag = tag;
+                ::SimdDetectionInfo(handle, (size_t*)&data.size.x, (size_t*)&data.size.y, &data.flags);
+                _data.push_back(data);
+            }
+            return handle != NULL;
+        }
+
+        /*!
             Prepares Detection structure to work with image of given size. 
 
             \param [in] imageSize - a size of input image.
